@@ -1,0 +1,45 @@
+package com.blog.services.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.blog.payloads.CategoryDto;
+import com.blog.repositories.CategoryRepo;
+import com.blog.services.CategoryServices;
+
+public class CategoryServicesImpl implements CategoryServices{
+	
+	@Autowired
+	private CategoryRepo categoryRepo;
+	@Override
+	public CategoryDto createCategory(CategoryDto categoryDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CategoryDto updateCategory(CategoryDto categoryDto, Integer categoryId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteCategory(Integer categoryId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public CategoryDto getCategory(Integer categoryId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CategoryDto> getCategories() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

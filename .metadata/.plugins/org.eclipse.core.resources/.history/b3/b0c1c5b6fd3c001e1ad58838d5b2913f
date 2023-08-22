@@ -1,0 +1,8 @@
+package com.blog.exceptions;
+
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice //Global Exception Handling 
+public class GlobalExceptionHandler {
+	
+}
