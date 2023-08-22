@@ -29,7 +29,7 @@ public class PostController {
 	@Autowired
 	private PostServices postServices;
 	
-	//Create
+	//Create Post
 	@PostMapping("/user/{userId}/category/{categoryId}/posts")
 	public ResponseEntity<PostDto> createPost(
 			@RequestBody PostDto postDto,
