@@ -9,10 +9,15 @@ import Home from './pages/Home';
 import Signup from './pages/Singup';
 import About from './pages/About';
 import Services from './pages/Services';
+import TrekAPIService from './pages/TrekAPIService/TrekAPIService';
+
 function App() {
   return (
+    
    <BrowserRouter>
+      <Base/>
       <Routes>
+      
         <Route path="/" element={<Home/>} />
         <Route path="Login" element={<Login/>} />
         <Route path="Signup" element={<Signup/>}/>
