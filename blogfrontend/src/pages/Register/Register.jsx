@@ -15,7 +15,7 @@ const Signup = () => {
   // };
 
   let [registerData, setRegisterData] = 
-  useState({ name: "", email: "", username: "", password: "", address: "", contact: "", role: "" });
+  useState({ name: "", email: "", password: "", about: "" });
 
   // const [message, setMessage] = useState("");
 
@@ -25,12 +25,12 @@ const Signup = () => {
   }
   const addData = (event) => {
     event.preventDefault();
-    if (registerData.name === "" || registerData.email === "" || registerData.username === "" || registerData.password === "" || registerData.address === "" || registerData.contact === "" || registerData.role === "") {
+    if (registerData.name === "" || registerData.email === "" || registerData.password === "" || registerData.about === "") {
       // setMessage("Plase enter valid data..");
       toast.error("Plase enter valid data..");//{ position: toast.POSITION.CENTER_LEFT });
       return;
     }
-    let registerData1 = { name: registerData.name, email: registerData.email, username: registerData.username, password: registerData.password, address: registerData.address, contact: registerData.contact, role: registerData.role }
+    let registerData1 = { name: registerData.name, email: registerData.email, password: registerData.password, about: registerData.about }
     TrekAPIService.addUser(registerData1)
       .then((result) => {
         console.log(result);
@@ -43,7 +43,7 @@ const Signup = () => {
         toast.error("Error 400/500..");
       });
 
-    setRegisterData({ name: "", email: "", username: "", password: "", address: "", contact: "", role: "" });
+    setRegisterData({ name: "", email: "", password: "", about:"" });
   }
 
 
@@ -65,28 +65,13 @@ const Signup = () => {
           </div>
 
           <div className="mb-2 mt-2">
-            <label for="text" className="form-label font-weight-bold text-left">Username</label>
-            <input type="username" className="form-control" id="username" placeholder="Enter Username" name="username" value={registerData.username} onChange={changeHandle} />
-          </div>
-
-          <div className="mb-2 mt-2">
             <label for="text" className="form-label font-weight-bold text-left">Password</label>
             <input type="password" className="form-control" id="password" placeholder="Enter Password" name="password" value={registerData.password} onChange={changeHandle} />
           </div>
 
           <div className="mb-2 mt-2">
-            <label for="address" className="form-label font-weight-bold text-left">Address</label>
-            <input type="text" className="form-control" id="address" placeholder="Enter Address" name="address" value={registerData.address} onChange={changeHandle} />
-          </div>
-
-          <div className="mb-2 mt-2">
-            <label for="contact" className="form-label font-weight-bold text-left">Contact</label>
-            <input type="text" className="form-control" id="contact" placeholder="Enter Contact No" name="contact" value={registerData.contact} onChange={changeHandle} />
-          </div>
-
-          <div className="mb-2 mt-2">
-            <label for="role" className="form-label font-weight-bold text-left">Role</label>
-            <input type="text" className="form-control" id="role" placeholder="Enter Role" name="role" value={registerData.role} onChange={changeHandle} />
+            <label for="about" className="form-label font-weight-bold text-left">About</label>
+            <input type="text" className="form-control" id="about" placeholder="Enter User Details" name="about" value={registerData.about} onChange={changeHandle} />
           </div>
 
           <button type="button" className="btn btn-primary bg-danger p-2 px-5" onClick={addData}>Register</button>

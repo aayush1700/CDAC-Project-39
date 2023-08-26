@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const base_url="http://localhost:9090/api";
+const base_url="/api/users";
 
 class TrekAPIService{
         
@@ -14,7 +14,7 @@ class TrekAPIService{
     }
 
     addUser(user){
-        return axios.post(base_url+"users/",user,{headers:{
+        return axios.post(base_url+"/",user,{headers:{
             'content-type':'application/json'}});
     }
 
@@ -22,7 +22,10 @@ class TrekAPIService{
         return axios.post(base_url+"users/login",logindata,{headers:{
             'content-type':'application/json'}});
      }
-
+     getUserByEmailPassword(logindata){
+        return axios.post(base_url+"users/login",logindata,{headers:{
+            'content-type':'application/json'}});
+     }
 
     // Packages
     getAllPackages(){

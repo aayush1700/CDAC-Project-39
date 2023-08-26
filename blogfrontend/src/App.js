@@ -6,11 +6,10 @@ import Base from './Components/Base';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Login from './pages/Login';
 import Home from './pages/Home';
-import Signup from './pages/Singup';
 import About from './pages/About';
 import Services from './pages/Services';
 import TrekAPIService from './pages/TrekAPIService/TrekAPIService';
-
+import Signup from './pages/Signup';
 function App() {
   //this is a comment
   return (
