@@ -1,3 +1,4 @@
+
 import Base from "../Components/Base";
 
 const Home = () => {
