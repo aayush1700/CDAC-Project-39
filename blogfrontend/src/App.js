@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "reactstrap";
@@ -12,6 +13,20 @@ import TrekAPIService from "./pages/TrekAPIService/TrekAPIService";
 import Admin from "./Components/Admin";
 
 
+=======
+import logo from './logo.svg';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'reactstrap';
+import Base from './Components/Base';
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Login from './pages/Login';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import TrekAPIService from './pages/TrekAPIService/TrekAPIService';
+import Signup from './pages/Signup';
+>>>>>>> 032faf6a69f7887069f371b6acba70ed8f5313ea
 function App() {
   const USER_TYPES = {
     USER: "User",

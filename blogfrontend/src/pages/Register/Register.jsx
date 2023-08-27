@@ -15,7 +15,11 @@ const Signup = () => {
   // };
 
   let [registerData, setRegisterData] = 
+<<<<<<< HEAD
   useState({ name: "", email: "",  password: "",about: "" });
+=======
+  useState({ name: "", email: "", password: "", about: "" });
+>>>>>>> 032faf6a69f7887069f371b6acba70ed8f5313ea
 
   // const [message, setMessage] = useState("");
 
@@ -25,12 +29,20 @@ const Signup = () => {
   }
   const addData = (event) => {
     event.preventDefault();
+<<<<<<< HEAD
     if (registerData.name === "" || registerData.email === ""  || registerData.password === ""  || registerData.about === "") {
+=======
+    if (registerData.name === "" || registerData.email === "" || registerData.password === "" || registerData.about === "") {
+>>>>>>> 032faf6a69f7887069f371b6acba70ed8f5313ea
       // setMessage("Plase enter valid data..");
       toast.error("Plase enter valid data..");//{ position: toast.POSITION.CENTER_LEFT });
       return;
     }
+<<<<<<< HEAD
     let registerData1 = { name: registerData.name, email: registerData.email, password: registerData.password,  about: registerData.role }
+=======
+    let registerData1 = { name: registerData.name, email: registerData.email, password: registerData.password, about: registerData.about }
+>>>>>>> 032faf6a69f7887069f371b6acba70ed8f5313ea
     TrekAPIService.addUser(registerData1)
       .then((result) => {
         console.log(result);
@@ -43,7 +55,11 @@ const Signup = () => {
         toast.error("Error 400/500..");
       });
 
+<<<<<<< HEAD
     setRegisterData({ name: "", email: "",  password: "",about: "" });
+=======
+    setRegisterData({ name: "", email: "", password: "", about:"" });
+>>>>>>> 032faf6a69f7887069f371b6acba70ed8f5313ea
   }
 
 
@@ -64,19 +80,28 @@ const Signup = () => {
             <input type="email" className="form-control" id="email" placeholder="Enter Email" name="email" value={registerData.email} onChange={changeHandle} />
           </div>
 
+<<<<<<< HEAD
         
 
+=======
+>>>>>>> 032faf6a69f7887069f371b6acba70ed8f5313ea
           <div className="mb-2 mt-2">
             <label for="text" className="form-label font-weight-bold text-left">Password</label>
             <input type="password" className="form-control" id="password" placeholder="Enter Password" name="password" value={registerData.password} onChange={changeHandle} />
           </div>
 
+<<<<<<< HEAD
          
         
 
           <div className="mb-2 mt-2">
             <label for="about" className="form-label font-weight-bold text-left">About</label>
             <input type="text" className="form-control" id="about" placeholder="Enter About" name="about" value={registerData.role} onChange={changeHandle} />
+=======
+          <div className="mb-2 mt-2">
+            <label for="about" className="form-label font-weight-bold text-left">About</label>
+            <input type="text" className="form-control" id="about" placeholder="Enter User Details" name="about" value={registerData.about} onChange={changeHandle} />
+>>>>>>> 032faf6a69f7887069f371b6acba70ed8f5313ea
           </div>
 
           <button type="button" className="btn btn-primary bg-danger p-2 px-5" onClick={addData}>Register</button>

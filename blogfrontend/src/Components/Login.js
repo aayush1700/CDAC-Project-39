@@ -19,7 +19,7 @@ const Login = () => {
 
   const authenticate = (event) => {
     event.preventDefault();
-    if (logindata.username === "" || logindata.password === "") {
+    if (logindata.email === "" || logindata.password === "") {
       toast.error("Please enter valid fields");
       return;
     }
@@ -31,7 +31,7 @@ const Login = () => {
           setDbUser(result.data);
           toast.success("Login success..");
           sessionStorage.setItem("userinfo", JSON.stringify(result.data));
-          navigate('/paymentdetails', { replace: true });
+          navigate('/', { replace: true });
         })
         .catch((error) => {
           console.log(error);
@@ -39,7 +39,7 @@ const Login = () => {
           return;
         })
 
-      setLoginData({ username: "", password: "" });
+      setLoginData({ email: "", password: "" });
     }
 
   }
@@ -51,8 +51,8 @@ const Login = () => {
         <ToastContainer></ToastContainer>
         <form>
           <div class="mb-5 mt-5">
-            <label for="username" class="form-label font-weight-bold text-left">Username</label>
-            <input type="text" class="form-control" id="username" placeholder="Enter username" value={logindata.username} name="username" onChange={changeHandle} />
+            <label for="email" class="form-label font-weight-bold text-left">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" value={logindata.email} name="email" onChange={changeHandle} />
           </div>
           <div class="mb-5">
             <label for="password" class="form-label font-weight-bold text-left">Password</label>
