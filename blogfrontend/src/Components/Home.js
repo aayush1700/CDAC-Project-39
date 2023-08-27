@@ -1,4 +1,4 @@
-import Base from "../Components/Base";
+import Base from "./Base";
 
 const Home = () => {
     return(

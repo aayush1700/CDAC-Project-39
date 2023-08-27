@@ -84,7 +84,7 @@ public class PostController {
 	@DeleteMapping("/posts/{postId}")
 	public ResponseEntity<ApiResponse> deletePostById(@PathVariable Integer postId){
 		this.postServices.deletePost(postId);
-		return new ResponseEntity<ApiResponse>(new ApiResponse("Post Deleted Successfully",true),HttpStatus.OK);
+		return new ResponseEntity<ApiResponse>(new ApiResponse(true,"Post Deleted Successfully"),HttpStatus.OK);
 	}
 	
 	//UpdateById

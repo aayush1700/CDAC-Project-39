@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import TrekAPIService from '../TrekAPIService/TrekAPIService';
+import TrekAPIService from './TrekAPIService/TrekAPIService';
 import './Register.css';
 import { ToastContainer, toast } from 'react-toastify';
 
-const Signup = () => {
+const Signup1 = () => {
   // const showToastMessage = () => {
   //   toast.success('Success Notification !', {
   //     position: toast.POSITION.TOP_RIGHT
@@ -86,4 +86,4 @@ const Signup = () => {
   )
 }
 
-export default Signup;
+export default Signup1;
