@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import '../pages/Login/Login.css';
 import TrekAPIService from '../pages/TrekAPIService/TrekAPIService';
-
+import { doLogin } from './Auth';
 const Login = () => {
 
   const [logindata, setLoginData] = useState({ username: "", password: "" });
@@ -28,10 +28,13 @@ const Login = () => {
       TrekAPIService.getUserByUnamePassword(logindata)
         .then((result) => {
           console.log(result.data);
+          doLogin(result.data,()=>{
+            console.log("login data is saved to local storage");
+          })
           setDbUser(result.data);
           toast.success("Login success..");
           sessionStorage.setItem("userinfo", JSON.stringify(result.data));
-          navigate('/', { replace: true });
+          navigate('/user/dashboard', { replace: true });
         })
         .catch((error) => {
           console.log(error);

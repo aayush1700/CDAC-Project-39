@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import TrekAPIService from '../pages/TrekAPIService/TrekAPIService';
 import '../pages/Register/Register.css';
 import { ToastContainer, toast } from 'react-toastify';
-
+import { useNavigate } from 'react-router-dom';
 const Signup = () => {
   // const showToastMessage = () => {
   //   toast.success('Success Notification !', {
@@ -13,6 +13,7 @@ const Signup = () => {
   //     position: toast.POSITION.TOP_CENTER
   //   });
   // };
+  let navigate = useNavigate();
 
   let [registerData, setRegisterData] = 
   useState({ name: "", email: "", password: "", about: "" });
@@ -36,6 +37,7 @@ const Signup = () => {
         console.log(result);
         // setMessage("Registration successfull..");
         toast.success("Registration successfull..");
+        navigate('/Login', { replace: true });
       })
       .catch((error) => {
         console.log(error);

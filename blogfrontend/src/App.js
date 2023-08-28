@@ -10,6 +10,9 @@ import About from './pages/About';
 import Services from './pages/Services';
 import TrekAPIService from './pages/TrekAPIService/TrekAPIService';
 import Signup from './pages/Signup';
+import Userdashboard from './User-routes/Userdashboard';
+import Privateroute from './Components/Privateroute';
+import ProfileInfo from './User-routes/ProfileInfo';
 function App() {
   //this is a comment
   return (
@@ -23,6 +26,12 @@ function App() {
         <Route path="Signup" element={<Signup/>}/>
         <Route path="About" element={<About/>}/>
         <Route path="Services" element={<Services/>}/>
+        
+        
+        <Route path="/user" element={<Privateroute />}>
+         <Route path="dashboard" element={<Userdashboard />} />
+         <Route path="profile-info" element={<ProfileInfo />} />
+        </Route>
       </Routes>
    </BrowserRouter>
   );

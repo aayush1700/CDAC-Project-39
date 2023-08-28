@@ -18,10 +18,7 @@ class TrekAPIService{
             'content-type':'application/json'}});
     }
 
-     getUserByUnamePassword(logindata){
-        return axios.post(base_url+"users/login",logindata,{headers:{
-            'content-type':'application/json'}});
-     }
+  
      getUserByEmailPassword(logindata){
         return axios.post(base_url+"users/login",logindata,{headers:{
             'content-type':'application/json'}});
@@ -42,10 +39,11 @@ class TrekAPIService{
     //         'content-type':'application/json'}});
     // }
 
-    // Hotel Service
-    getAllHotelService(){
-        return axios.get(base_url+"hotel/");
-    }
+    // Category Service
+    //getall categories
+     loadAllCategories=()=>{
+        return axios.get(base_url+"/categories/").then(Response=>{return Response.data})
+      }
 
     deleteHotelService(id){
         return axios.delete(base_url+"hotel/"+id);
